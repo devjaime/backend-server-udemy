@@ -93,7 +93,13 @@ function subirPorTipo(tipo, id, nombreArchivo, res) {
 
             // Si existe, elimina la imagen anterior
             if (fs.existsSync(pathViejo)) {
-                fs.unlink(pathViejo);
+                fs.unlink(pathViejo, (err) => {
+                    if (err) {
+                        console.log("no se pudo eliminar la imagen local:" + err);
+                    } else {
+                        console.log('imagen local eliminada con éxito');
+                    }
+                });
             }
 
             usuario.img = nombreArchivo;
@@ -131,7 +137,13 @@ function subirPorTipo(tipo, id, nombreArchivo, res) {
 
             // Si existe, elimina la imagen anterior
             if (fs.existsSync(pathViejo)) {
-                fs.unlink(pathViejo);
+                fs.unlink(pathViejo, (err) => {
+                    if (err) {
+                        console.log("no se pudo eliminar la imagen local:" + err);
+                    } else {
+                        console.log('imagen local eliminada con éxito');
+                    }
+                });
             }
 
             medico.img = nombreArchivo;
@@ -165,7 +177,13 @@ function subirPorTipo(tipo, id, nombreArchivo, res) {
 
             // Si existe, elimina la imagen anterior
             if (fs.existsSync(pathViejo)) {
-                fs.unlink(pathViejo);
+                fs.unlink(pathViejo, (err) => {
+                    if (err) {
+                        console.log("no se pudo eliminar la imagen local:" + err);
+                    } else {
+                        console.log('imagen local eliminada con éxito');
+                    }
+                });
             }
 
             hospital.img = nombreArchivo;
